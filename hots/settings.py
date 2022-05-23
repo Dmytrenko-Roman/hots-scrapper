@@ -12,6 +12,9 @@ BOT_NAME = "hots"
 SPIDER_MODULES = ["hots.spiders"]
 NEWSPIDER_MODULE = "hots.spiders"
 
+FEED_FORMAT = "json"
+FEED_URI = "../heroes.json"
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'hots (+http://www.yourdomain.com)'
