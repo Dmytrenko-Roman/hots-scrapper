@@ -12,10 +12,6 @@ BOT_NAME = "hots"
 SPIDER_MODULES = ["hots.spiders"]
 NEWSPIDER_MODULE = "hots.spiders"
 
-FEED_FORMAT = "json"
-FEED_URI = "../heroes.json"
-
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'hots (+http://www.yourdomain.com)'
 
@@ -65,9 +61,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'hots.pipelines.HotsPipeline': 300,
-# }
+ITEM_PIPELINES = {
+   'hots.pipelines.HotsPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
