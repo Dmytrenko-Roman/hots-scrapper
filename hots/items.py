@@ -1,12 +1,19 @@
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
+from dataclasses import dataclass
+from dataclasses import field
+from datetime import datetime
+from typing import Optional
 
-import scrapy
-
-
-class HotsItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+@dataclass
+class HeroItem:
+    name: Optional[str] = field(default=None)
+    title: Optional[str] = field(default=None)
+    role: Optional[str] = field(default=None)
+    type: Optional[str] = field(default=None)
+    description: Optional[str] = field(default=None)
+    difficulty: Optional[str] = field(default=None)
+    card_portrait: Optional[str] = field(default=None)
+    franchise: Optional[str] = field(default=None)
+    href: Optional[str] = field(default=None)
+    abilities: Optional[list] = field(default_factory=list)
+    heroic_abilities: Optional[list] = field(default_factory=list)
+    imported_at: Optional[datetime] = field(default=datetime.now())
