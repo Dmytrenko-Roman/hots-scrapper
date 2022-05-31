@@ -3,7 +3,7 @@ import sqlite3
 
 class HotsPipeline:
     def __init__(self):
-        self.connection = sqlite3.connect("hots.db")
+        self.connection = sqlite3.connect("../hots.db")
         self.cursor = self.connection.cursor()
         self.create_table()
 
