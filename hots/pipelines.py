@@ -9,7 +9,7 @@ class HotsPipeline:
 
     def create_table(self):
         self.cursor.execute(
-            """CREATE TABLE IF NOT EXISTS heroes(
+            """CREATE TABLE IF NOT EXISTS hero(
             name TEXT PRIMARY KEY,
             title TEXT,
             role TEXT,
@@ -24,7 +24,7 @@ class HotsPipeline:
 
     def process_item(self, item, spider):
         self.cursor.execute(
-            """INSERT OR IGNORE INTO heroes VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            """INSERT OR IGNORE INTO hero VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
                 item.name,
                 item.title,

@@ -1,5 +1,7 @@
 # Byte-compiled / optimized / DLL files
 hots.db
+hots.db-shm
+hots.db-wal
 
 __pycache__/
 *.py[cod]
