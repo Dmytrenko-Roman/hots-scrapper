@@ -5,26 +5,10 @@ class HotsPipeline:
     def __init__(self):
         self.connection = sqlite3.connect("../hots.db")
         self.cursor = self.connection.cursor()
-        self.create_table()
-
-    def create_table(self):
-        self.cursor.execute(
-            """CREATE TABLE IF NOT EXISTS hero(
-            name TEXT PRIMARY KEY,
-            title TEXT,
-            role TEXT,
-            type TEXT,
-            description TEXT,
-            difficulty TEXT,
-            card_portrait TEXT,
-            franchise TEXT,
-            href TEXT
-            )"""
-        )
 
     def process_item(self, item, spider):
         self.cursor.execute(
-            """INSERT OR IGNORE INTO hero VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            """INSERT OR IGNORE INTO heroes_hero VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
                 item.name,
                 item.title,
