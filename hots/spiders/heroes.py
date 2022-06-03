@@ -19,7 +19,7 @@ class HeroesSpider(scrapy.Spider):
 
         new_hero = HeroItem()
 
-        id = 0
+        id = 1
         for hero in heroes_data:
             new_hero.id = id
             new_hero.name = hero["name"]

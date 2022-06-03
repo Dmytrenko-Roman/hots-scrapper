@@ -6,6 +6,7 @@ from typing import Optional
 
 @dataclass
 class HeroItem:
+    id: Optional[int] = field(default=None)
     name: Optional[str] = field(default=None)
     title: Optional[str] = field(default=None)
     role: Optional[str] = field(default=None)
