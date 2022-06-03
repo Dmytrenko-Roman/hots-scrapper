@@ -19,7 +19,9 @@ class HeroesSpider(scrapy.Spider):
 
         new_hero = HeroItem()
 
+        id = 0
         for hero in heroes_data:
+            new_hero.id = id
             new_hero.name = hero["name"]
             new_hero.title = hero["title"]
             new_hero.role = hero["expandedRole"]["name"]
@@ -29,6 +31,8 @@ class HeroesSpider(scrapy.Spider):
             new_hero.card_portrait = hero["cardPortrait"]
             new_hero.franchise = hero["franchise"]
             new_hero.href = hero["href"]
+
+            id += 1
 
             yield new_hero
 

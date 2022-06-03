@@ -8,8 +8,9 @@ class HotsPipeline:
 
     def process_item(self, item, spider):
         self.cursor.execute(
-            """INSERT OR IGNORE INTO heroes_hero VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            """INSERT OR IGNORE INTO heroes_hero VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
+                item.id,
                 item.name,
                 item.title,
                 item.role,
